@@ -10,8 +10,11 @@ int main()
 
 	mylist.push_back(77);
 	mylist.push_back(22);
+	mylist.push_front(11);
+	cout << "front() = " << mylist.front() << "\n";
 	//now front equals 77, and back 22
 	mylist.front() -= mylist.back();
+	//front() Returns a reference to the first element in the list container.
 	cout << "mylist.front() is now " << mylist.front() << "\n";
 
 	int sum(0);
