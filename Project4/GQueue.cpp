@@ -1,4 +1,10 @@
 //GQueue.cpp
+#include <iostream>
+#include <list>
+#include "GQueue.h"
+
+using namespace std;
+
 template <class Type>
 GQueue::GQueue()
 {

@@ -1,14 +1,18 @@
 //GStack.cpp
 #include <iostream>
 #include <list>
+#include "GStack.h"
 using namespace std;
-GStack::GStack()
+
+template <class T>
+GStack<T>::GStack()
 {
+	//cout << "in constractor\n" ;
 	list<T> top;
 }
 
-template <class Type>
-bool GStack::isEmpty() const
+template <class T>
+bool GStack<T>::isEmpty() const
 {
 	if(top.isempty())
 	{
@@ -19,13 +23,13 @@ bool GStack::isEmpty() const
 		return false;
 	}
 }
-template <class Type>
-void GStack::push(const T& newItem)
+template <class T>
+void GStack<T>::push(const T& newItem)
 {
 		top.push_front(newItem);
 }
-template <class Type>
-void pop()
+template <class T>
+void GStack<T>::pop()
 {
 	if(top.isempty())
 	{
@@ -37,27 +41,32 @@ void pop()
 		top.pop_front();
 	}
 }
-template <class Type>
-void pop(T& stackTop);
+template <class T>
+void GStack<T>::pop(T& stackTop)
 {
 	if(top.isempty())
 	{
-		throw new StackException("Stack is empty");
+		throw "Stack is empty";
 	}
 	else
 	{
 		stackTop = top.pop_front();
 	}
 }
-template <class Type>
-void getTop(T& stackTop) const
+template <class T>
+void GStack<T>::getTop(T& stackTop) const
 {
-	if (top.isempty())
-	{
-		throw new StackException("Stack is empty");
-	}
-	else
-	{
-		stackTop = top.front();
-	}
+	
+		if (top.empty())
+		{
+			throw "Stack is empty";
+		}
+		else
+		{
+			stackTop = top.front();
+			cout << stackTop << "is stackTop\n";
+			top.pop_front();
+		}
+
+	
 }
