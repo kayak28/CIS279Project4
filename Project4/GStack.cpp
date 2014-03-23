@@ -50,7 +50,9 @@ void GStack<T>::pop(T& stackTop)
 	}
 	else
 	{
-		stackTop = top.pop_front();
+		stackTop = top.front();
+		cout << stackTop << "is stackTop\n";
+		top.pop_front();
 	}
 }
 template <class T>
@@ -63,9 +65,9 @@ void GStack<T>::getTop(T& stackTop) const
 		}
 		else
 		{
+			cout << "HIIIII\n";
 			stackTop = top.front();
-			cout << stackTop << "is stackTop\n";
-			top.pop_front();
+			
 		}
 
 	
